@@ -20,7 +20,7 @@ class TestEmployeeComputePayment(unittest.TestCase):
 
 
 	def test_it_should_return_a_float_type(self) -> None:
-		self.assertIsInstance(float, self.sut.compute_payout())
+		self.assertIsInstance(obj=self.sut.compute_payout(), cls=float)
 
 	def test_if_computes_correctly_for_no_comission_no_hours_worked(self) -> None:
 		self.assertAlmostEqual(
@@ -39,7 +39,7 @@ class TestEmployeeComputePayment(unittest.TestCase):
 	def test_if_computes_correctly_with_comission(self) -> None:
 		"""This test assumes: 10 contracts and hours worked"""
 		self.sut.contracts_landed = 10
-		self.sut.hours_worked = 10
+		self.sut.hours_worked = 10.0
 
 		self.assertAlmostEqual(
 			first=self.EXPECTED_PAYOUT_WITH_COMISSION,
@@ -49,7 +49,7 @@ class TestEmployeeComputePayment(unittest.TestCase):
 	def test_if_computes_correctly_without_comission(self) -> None:
 		"""This test assumes: 10 contracts and hours worked"""
 		self.sut.contracts_landed = 10
-		self.sut.hours_worked = 10
+		self.sut.hours_worked = 10.0
 		self.sut.has_comission = False
 
 		self.assertAlmostEqual(
