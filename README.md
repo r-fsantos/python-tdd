@@ -14,4 +14,12 @@ Test-Driven-Development. It is a very interesting way of coding.
 modules to test, just point there or try to use only `...tests...`, instead of the full
 module-path. This should run all of them.
 
+## TODOs
+
+- Add linter and formatter;
+- Test another test framework
+- Implement a makefile
+- Take a look into another stand-alone projects good practices. Focuse on framework
+independent approaches.
+
 Have fun! :)
